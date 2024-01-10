@@ -1,0 +1,22 @@
+{
+  "name": "Malware_URL",
+  "version": "1.0.0",
+  "description": "A phishing detector using BERT algm",
+  "permissions": ["activeTab","declarativeContent", "storage", "webNavigation"],
+  "icons": {
+    "48": "virus.png"
+  },
+  "background": {
+    "service_worker": "js/bg-loader.js"
+  },
+  "action": {
+    "default_popup": "plugin_ui.html"
+  },
+  "content_scripts":[
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["js/features.js"]
+    }
+  ],
+  "manifest_version": 3
+}
